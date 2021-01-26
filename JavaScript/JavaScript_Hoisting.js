@@ -1,4 +1,4 @@
-(1)
+//(1)
 console.log(hello);                                   
 var hello = 'world';                                 
 //AFTER HOISTING BY THE INTERPRETER
@@ -7,7 +7,7 @@ var hello = 'world';
 //var hello = 'world';
 //Output is: undefined
 
-(2)
+//(2)
 var needle = 'haystack';
 test();
 function test(){
@@ -23,7 +23,7 @@ function test(){
 // }
 //Output is:"magnet"
 
-(3)
+//(3)
 var brendan = 'super cool';
 function print(){
     brendan = 'only okay';
@@ -36,7 +36,7 @@ console.log(brendan);
 //console.log(brendan); 
 //Output is:"super cool"
 
-(4)
+//(4)
 var food = 'chicken';
 console.log(food);
 eat();
@@ -54,7 +54,7 @@ function eat(){
 //Output is:"chicken"
 //Output is:"half-chicken"
 
-(5)
+//(5)
 
 mean();
 console.log(food);
@@ -69,7 +69,7 @@ console.log(food);
 //Output is: undefined
 // Error
 
-(6)
+//(6)
 console.log(genre);
 var genre = "disco";
 rewind();
@@ -94,7 +94,7 @@ console.log(genre);
 //Output is:"r&b"
 //Output is:"disco"
 
-(7)
+//(7)
 dojo = "san jose";
 console.log(dojo);
 learn();
@@ -119,7 +119,7 @@ console.log(dojo);
 //Output is:"burbank"
 //Output is:"san jose"
 
-(8)
+//(8)
 console.log(makeDojo("Chicago", 65));
 console.log(makeDojo("Berkeley", 0));
 function makeDojo(name, students){
