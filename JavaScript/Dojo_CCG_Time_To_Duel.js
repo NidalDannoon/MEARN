@@ -15,7 +15,8 @@ class Unit extends Card {
     attack(target) {
         if (target instanceof Unit) {
 			target.res -= this.power;
-        } else{
+        } 
+		else{
             throw new Error("Target must be a unit!");
         }
     }
