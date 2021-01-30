@@ -11,7 +11,7 @@ class PersonCard extends Component {
         const {firstName,lastName,color } = this.props;
         return (
             <div>
-                <h1>{lastName} , {firstName}</h1>
+                <h1>{lastName},{firstName}</h1>
                 <h3>Age: {this.state.clickedAge}</h3>
                 <h3>Hair Color: {color}</h3>
                 <button onClick={this.birthDay}>Birthday Button for {firstName} {lastName}</button>
