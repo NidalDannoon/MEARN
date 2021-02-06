@@ -1,0 +1,11 @@
+Get Requests Through Postman:
+
+(1)https://pokeapi.co/api/v2/pokemon/50
+
+(2)https://pokeapi.co/api/v2/pokemon/ditto
+
+(3)https://pokeapi.co/api/v2/pokemon/rattata
+
+(4)https://pokeapi.co/api/v2/pokemon/spearow
+
+(5)https://pokeapi.co/api/v2/pokemon/15
