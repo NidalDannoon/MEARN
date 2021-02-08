@@ -1,0 +1,291 @@
+﻿ show dbs
+dmin   0.000GB
+onfig  0.000GB
+ocal   0.000GB
+ use my_first_db
+witched to db my_first_db
+ db.createCollection("students")
+ "ok" : 1 }
+ db.students.insert({name: "Nidal", homeState: "Bethlehem", luckyNumber: 77, bi
+thday:{month: "December", day: 12, year: 1994}})
+riteResult({ "nInserted" : 1 })
+ db.students.insert({name: "Ameen", homeState: "Ramallah", luckyNumber: 33, bir
+hday:{month: "March", day: 29, year: 1980}})
+riteResult({ "nInserted" : 1 })
+ db.students.insert({name: "Ahmed", homeState: "Ramallah", luckyNumber: 93, bir
+hday:{month: "January", day: 10, year: 1999}})
+riteResult({ "nInserted" : 1 })
+ db.students.insert({name: "Samer", homeState: "Hebron", luckyNumber: 23, birth
+ay:{month: "Augest", day: 22, year: 1985}})
+riteResult({ "nInserted" : 1 })
+ db.students.insert({name: "Montaser", homeState: "Hebron", luckyNumber: 54, bi
+thday:{month: "July", day: 18, year: 1991}})
+riteResult({ "nInserted" : 1 })
+ db.students.find().pretty()
+
+       "_id" : ObjectId("6021599138089735aab4e265"),
+       "name" : "Nidal",
+       "homeState" : "Bethlehem",
+       "luckyNumber" : 77,
+       "birthday" : {
+               "month" : "December",
+               "day" : 12,
+               "year" : 1994
+       }
+
+
+       "_id" : ObjectId("602159c338089735aab4e266"),
+       "name" : "Ameen",
+       "homeState" : "Ramallah",
+       "luckyNumber" : 33,
+       "birthday" : {
+               "month" : "March",
+               "day" : 29,
+               "year" : 1980
+       }
+
+
+       "_id" : ObjectId("602159f738089735aab4e267"),
+       "name" : "Ahmed",
+       "homeState" : "Ramallah",
+       "luckyNumber" : 93,
+       "birthday" : {
+               "month" : "January",
+               "day" : 10,
+               "year" : 1999
+       }
+
+
+       "_id" : ObjectId("60215a2b38089735aab4e268"),
+       "name" : "Samer",
+       "homeState" : "Hebron",
+       "luckyNumber" : 23,
+       "birthday" : {
+               "month" : "Augest",
+               "day" : 22,
+               "year" : 1985
+       }
+
+
+       "_id" : ObjectId("60215a6138089735aab4e269"),
+       "name" : "Montaser",
+       "homeState" : "Hebron",
+       "luckyNumber" : 54,
+       "birthday" : {
+               "month" : "July",
+               "day" : 18,
+               "year" : 1991
+       }
+
+ db.students.find({homeState: "Hebron"}).pretty()
+
+       "_id" : ObjectId("60215a2b38089735aab4e268"),
+       "name" : "Samer",
+       "homeState" : "Hebron",
+       "luckyNumber" : 23,
+       "birthday" : {
+               "month" : "Augest",
+               "day" : 22,
+               "year" : 1985
+       }
+
+
+       "_id" : ObjectId("60215a6138089735aab4e269"),
+       "name" : "Montaser",
+       "homeState" : "Hebron",
+       "luckyNumber" : 54,
+       "birthday" : {
+               "month" : "July",
+               "day" : 18,
+               "year" : 1991
+       }
+
+ db.students.find({homeState: "Ramallah"}).pretty()
+
+       "_id" : ObjectId("602159c338089735aab4e266"),
+       "name" : "Ameen",
+       "homeState" : "Ramallah",
+       "luckyNumber" : 33,
+       "birthday" : {
+               "month" : "March",
+               "day" : 29,
+               "year" : 1980
+       }
+
+
+       "_id" : ObjectId("602159f738089735aab4e267"),
+       "name" : "Ahmed",
+       "homeState" : "Ramallah",
+       "luckyNumber" : 93,
+       "birthday" : {
+               "month" : "January",
+               "day" : 10,
+               "year" : 1999
+       }
+
+ db.students.find({luckyNumber: {$gte: 3}})
+ "_id" : ObjectId("6021599138089735aab4e265"), "name" : "Nidal", "homeState" :
+Bethlehem", "luckyNumber" : 77, "birthday" : { "month" : "December", "day" : 12
+ "year" : 1994 } }
+ "_id" : ObjectId("602159c338089735aab4e266"), "name" : "Ameen", "homeState" :
+Ramallah", "luckyNumber" : 33, "birthday" : { "month" : "March", "day" : 29, "y
+ar" : 1980 } }
+ "_id" : ObjectId("602159f738089735aab4e267"), "name" : "Ahmed", "homeState" :
+Ramallah", "luckyNumber" : 93, "birthday" : { "month" : "January", "day" : 10,
+year" : 1999 } }
+ "_id" : ObjectId("60215a2b38089735aab4e268"), "name" : "Samer", "homeState" :
+Hebron", "luckyNumber" : 23, "birthday" : { "month" : "Augest", "day" : 22, "ye
+r" : 1985 } }
+ "_id" : ObjectId("60215a6138089735aab4e269"), "name" : "Montaser", "homeState"
+: "Hebron", "luckyNumber" : 54, "birthday" : { "month" : "July", "day" : 18, "y
+ar" : 1991 } }
+ db.students.find({luckyNumber: {$gt: 3}})
+ "_id" : ObjectId("6021599138089735aab4e265"), "name" : "Nidal", "homeState" :
+Bethlehem", "luckyNumber" : 77, "birthday" : { "month" : "December", "day" : 12
+ "year" : 1994 } }
+ "_id" : ObjectId("602159c338089735aab4e266"), "name" : "Ameen", "homeState" :
+Ramallah", "luckyNumber" : 33, "birthday" : { "month" : "March", "day" : 29, "y
+ar" : 1980 } }
+ "_id" : ObjectId("602159f738089735aab4e267"), "name" : "Ahmed", "homeState" :
+Ramallah", "luckyNumber" : 93, "birthday" : { "month" : "January", "day" : 10,
+year" : 1999 } }
+ "_id" : ObjectId("60215a2b38089735aab4e268"), "name" : "Samer", "homeState" :
+Hebron", "luckyNumber" : 23, "birthday" : { "month" : "Augest", "day" : 22, "ye
+r" : 1985 } }
+ "_id" : ObjectId("60215a6138089735aab4e269"), "name" : "Montaser", "homeState"
+: "Hebron", "luckyNumber" : 54, "birthday" : { "month" : "July", "day" : 18, "y
+ar" : 1991 } }
+ db.students.find({luckyNumber: {$lte: 10}})
+ db.students.find({luckyNumber: {$lte:50}})
+ "_id" : ObjectId("602159c338089735aab4e266"), "name" : "Ameen", "homeState" :
+Ramallah", "luckyNumber" : 33, "birthday" : { "month" : "March", "day" : 29, "y
+ar" : 1980 } }
+ "_id" : ObjectId("60215a2b38089735aab4e268"), "name" : "Samer", "homeState" :
+Hebron", "luckyNumber" : 23, "birthday" : { "month" : "Augest", "day" : 22, "ye
+r" : 1985 } }
+ db.students.find({luckyNumber: {$lte: 90, $gte: 10}}).pretty()
+
+       "_id" : ObjectId("6021599138089735aab4e265"),
+       "name" : "Nidal",
+       "homeState" : "Bethlehem",
+       "luckyNumber" : 77,
+       "birthday" : {
+               "month" : "December",
+               "day" : 12,
+               "year" : 1994
+       }
+
+
+       "_id" : ObjectId("602159c338089735aab4e266"),
+       "name" : "Ameen",
+       "homeState" : "Ramallah",
+       "luckyNumber" : 33,
+       "birthday" : {
+               "month" : "March",
+               "day" : 29,
+               "year" : 1980
+       }
+
+
+       "_id" : ObjectId("60215a2b38089735aab4e268"),
+       "name" : "Samer",
+       "homeState" : "Hebron",
+       "luckyNumber" : 23,
+       "birthday" : {
+               "month" : "Augest",
+               "day" : 22,
+               "year" : 1985
+       }
+
+
+       "_id" : ObjectId("60215a6138089735aab4e269"),
+       "name" : "Montaser",
+       "homeState" : "Hebron",
+       "luckyNumber" : 54,
+       "birthday" : {
+               "month" : "July",
+               "day" : 18,
+               "year" : 1991
+       }
+
+ db.students.update({},{$set:{'interests': ['coding', 'brunch', 'MongoDB']}})
+riteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+ db.students.update({name: "Nidal"},{$set:{"interests": ["MERN"]}})
+riteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+ db.students.find({name:"Nidal"}).pretty()
+
+       "_id" : ObjectId("6021599138089735aab4e265"),
+       "name" : "Nidal",
+       "homeState" : "Bethlehem",
+       "luckyNumber" : 77,
+       "birthday" : {
+               "month" : "December",
+               "day" : 12,
+               "year" : 1994
+       },
+       "interests" : [
+               "MERN"
+       ]
+
+ db.students.find({name:"Nidal"}).pretty()
+
+       "_id" : ObjectId("6021599138089735aab4e265"),
+       "name" : "Nidal",
+       "homeState" : "Bethlehem",
+       "luckyNumber" : 77,
+       "birthday" : {
+               "month" : "December",
+               "day" : 12,
+               "year" : 1994
+       },
+       "interests" : [
+               "MERN"
+       ]
+
+ db.students.remove({name: "Nidal"})
+riteResult({ "nRemoved" : 1 })
+ db.students.remove({homeState: "Hebron"})
+riteResult({ "nRemoved" : 2 })
+ db.students.remove({luckyNumber: {$gt: 50}})
+riteResult({ "nRemoved" : 1 })
+ ^C
+ye
+
+:\Program Files\MongoDB\Server\4.2\bin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
